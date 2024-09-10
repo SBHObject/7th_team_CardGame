@@ -25,14 +25,14 @@ public class Card : MonoBehaviour
         int check = StageButton.stageLevel;
         idx = number;
 
-        if (check <= 2)
+        if (check <= 2) // 노말이나 하드일시
         {
-            frontImage.sprite = Resources.Load<Sprite>($"CardImage{idx}");
+            frontImage.sprite = Resources.Load<Sprite>($"CardImage{idx}"); // 팀원 이미지
         }
-        else if (check <= 3)
+        else if (check <= 3) // 히든모드일시
         {
             int hidden = idx + 20;
-            frontImage.sprite = Resources.Load<Sprite>($"CardImage{hidden}");
+            frontImage.sprite = Resources.Load<Sprite>($"CardImage{hidden}"); // 폭탄 및 매니저님들 이미지
         }
         Vector2 spriteSize = frontImage.sprite.bounds.size;
         Vector3 frontImgObjectSize = frontImage.transform.localScale;
@@ -44,7 +44,6 @@ public class Card : MonoBehaviour
     }
 
     public void OpenCard() {
-        Debug.Log("[Card.cs] OpenCard");
         CheckFirstSecondCard(); 
         FlipCard();
         audioSource.PlayOneShot(clip);
@@ -80,7 +79,6 @@ public class Card : MonoBehaviour
     }
 
     public void HideCard() {
-        Debug.Log("[Card.cs] HideCard");
         DOTween.Sequence()
             .AppendInterval(0.75f)
             .Append(GetComponent<RectTransform>().DOScale(0, 0.5f)
@@ -92,7 +90,6 @@ public class Card : MonoBehaviour
     }
 
     public void CloseCard() {
-        Debug.Log("[Card.cs] CloseCard");
         Invoke("CloseCardInvoke", 0.75f);
     }
 

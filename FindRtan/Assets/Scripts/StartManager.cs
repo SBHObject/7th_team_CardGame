@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class StartManager : MonoBehaviour
 {
-    bool nC = false;
-    bool hC = false;
+    bool nC = false; // 노말클리어 여부 확인 true == 하드모드 해금 
+    bool hC = false; // 하드 클리어 여부 확인 true == 히든모드 해금
 
     public GameObject stagePanel;
     public GameObject HardBtn;
