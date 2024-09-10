@@ -24,4 +24,9 @@ public class StageButton : MonoBehaviour
         SceneManager.LoadScene("MainScene");// Check ex)HiddenScene
         stageLevel = 3;
     }
+
+    public void MainBtn()
+    {
+        SceneManager.LoadScene("StartScene");
+    }
 }
