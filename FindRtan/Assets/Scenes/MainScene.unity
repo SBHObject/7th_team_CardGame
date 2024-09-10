@@ -174,7 +174,6 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: c41ed0d8e30abd642a92ed927dfda2be, type: 3}
   audioSource: {fileID: 105321479}
   card: {fileID: 1670088114099793172, guid: c9c56dac3f826904298c0d2c55b06d03, type: 3}
-  cardSlot: {fileID: 2583440930598861288, guid: 56e956e20faf9794cb444f714d9db2df, type: 3}
 --- !u!82 &105321479
 AudioSource:
   m_ObjectHideFlags: 0
@@ -536,7 +535,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.3529412, g: 0.3529412, b: 0.88235295, a: 0}
+  m_BackGroundColor: {r: 0.6806248, g: 0.6806248, b: 0.8962264, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

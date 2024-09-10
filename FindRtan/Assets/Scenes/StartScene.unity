@@ -1259,9 +1259,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stagePanel: {fileID: 2059298167}
-  HardBtn: {fileID: 0}
-  HardBtnOff: {fileID: 0}
-  HiddenBtn: {fileID: 0}
+  HardBtn: {fileID: 927197360}
+  HardBtnOff: {fileID: 1203038214}
+  HiddenBtn: {fileID: 1715651592}
 --- !u!1 &1376780781
 GameObject:
   m_ObjectHideFlags: 0
