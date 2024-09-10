@@ -29,8 +29,17 @@ public class GameManager : MonoBehaviour
     public AudioClip winSound;
     public AudioClip failSound;
 
-    void Update() {
-        if (time >= 30.0f) {
+    //게임 시작 여부
+    public bool isStart = false;
+
+    void Update() 
+    {
+        //시작여부가 false이면, 작동하지 않음
+        if (isStart == false)
+            return;
+
+        if (time >= 30.0f) 
+        {
             //게임 종료후 인보크를 발생시키기 위해 timeSacle = 0 삭제
             time = 30f;
             EndGame();
