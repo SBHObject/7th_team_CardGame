@@ -71,6 +71,18 @@ public class CardManager : MonoBehaviour
     public void isMatched() {
         Debug.Log("[CardManager.cs] isMatched");
 
+        int boom = StageButton.stageLevel;
+        if (boom == 3)
+        {
+            if (firstCard.idx == secondCard.idx)
+            {
+                if (firstCard.idx == 0)
+                {
+                    Invoke(nameof(EndGame), 1.5f);
+                }
+            }
+        }
+
         if(firstCard.idx == secondCard.idx) {
             audioSource.PlayOneShot(audioClip);
 
