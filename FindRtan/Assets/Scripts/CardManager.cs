@@ -36,15 +36,19 @@ public class CardManager : MonoBehaviour
         Time.timeScale = 1.0f;
         audioSource = GetComponent<AudioSource>();
 
-        int difficulty = 0; //일단 난이도 0이 노말, 1이 어려움
+
+        int difficulty = StageButton.stageLevel;
         int cardNum = 0;    // 생성할 카드 수
 
         switch(difficulty) {
-            case 0 : // Normal
+            case 1 : // Normal
                 cardNum = 12;
                 break;
-            case 1 : // Hard
+            case 2 : // Hard
                 cardNum = 20;
+                break;
+            case 3: // hidden
+                cardNum = 10;
                 break;
         }
 
