@@ -44,7 +44,7 @@ public class Card : MonoBehaviour
     }
 
     public void OpenCard() {
-        Debug.Log("[Card.cs] OpenCard");
+        UnityEngine.Debug.Log("[Card.cs] OpenCard");
         CheckFirstSecondCard(); 
         FlipCard();
         audioSource.PlayOneShot(clip);
@@ -80,7 +80,7 @@ public class Card : MonoBehaviour
     }
 
     public void HideCard() {
-        Debug.Log("[Card.cs] HideCard");
+        UnityEngine.Debug.Log("[Card.cs] HideCard");
         DOTween.Sequence()
             .AppendInterval(0.75f)
             .Append(GetComponent<RectTransform>().DOScale(0, 0.5f)
@@ -92,7 +92,7 @@ public class Card : MonoBehaviour
     }
 
     public void CloseCard() {
-        Debug.Log("[Card.cs] CloseCard");
+        UnityEngine.Debug.Log("[Card.cs] CloseCard");
         Invoke("CloseCardInvoke", 0.75f);
     }
 
