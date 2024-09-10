@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,9 +22,18 @@ public class Card : MonoBehaviour
     }
 
     public void Setting(int number) {
+        int check = StageButton.stageLevel;
         idx = number;
-        frontImage.sprite = Resources.Load<Sprite>($"CardImage{idx}");
 
+        if (check <= 2)
+        {
+            frontImage.sprite = Resources.Load<Sprite>($"CardImage{idx}");
+        }
+        else if (check <= 3)
+        {
+            int hidden = idx + 20;
+            frontImage.sprite = Resources.Load<Sprite>($"CardImage{hidden}");
+        }
         Vector2 spriteSize = frontImage.sprite.bounds.size;
         Vector3 frontImgObjectSize = frontImage.transform.localScale;
 
