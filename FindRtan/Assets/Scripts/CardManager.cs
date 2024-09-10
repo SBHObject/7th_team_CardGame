@@ -145,7 +145,7 @@ public class CardManager : MonoBehaviour
         //위치에 필요한만큼 가짜카드 생성
         for(int i = 0; i < cardNum; i++)
         {
-            fakeCardDeck[i] = Instantiate(card, cardDeckPosition.transform.localPosition,Quaternion.identity);
+            fakeCardDeck[i] = Instantiate(card, cardDeckPosition.transform.localPosition, Quaternion.identity);
             //가짜카드을의 버튼기능 비활성화
             fakeCardDeck[i].GetComponentInChildren<Button>().enabled = false;
         }
