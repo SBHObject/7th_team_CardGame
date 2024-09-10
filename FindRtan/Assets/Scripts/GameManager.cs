@@ -22,6 +22,12 @@ public class GameManager : MonoBehaviour
 
     //승리시, 남은 시간을 표기하는 텍스트
     public Text leftTimeText;
+    // 게임매니저 오브젝트에 붙은 오디오소스 불러오기
+    private AudioSource audioSource;
+
+    //승리, 패배 사운드
+    public AudioClip winSound;
+    public AudioClip failSound;
 
     void Update() {
         if (time >= 30.0f) {
@@ -46,6 +52,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public void EndGame() {
         endText.SetActive(true);
 
@@ -63,11 +74,15 @@ public class GameManager : MonoBehaviour
             leftTimeText.text = time.ToString("N2");
             //승리 UI 발생
             winUi.SetActive(true);
+            //SFX 재생, 승리
+            audioSource.PlayOneShot(winSound);
         }
         else
         {
             //패배 UI 발생
             failUi.SetActive(true);
+            //SFX 재생, 패배
+            audioSource.PlayOneShot(failSound);
         }
     }
 
