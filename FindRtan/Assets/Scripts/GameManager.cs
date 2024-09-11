@@ -35,8 +35,6 @@ public class GameManager : MonoBehaviour
     public bool isStart = false;
     private bool hurry = false;
 
-
-
     void Update() 
     {
 
@@ -97,7 +95,11 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("HardModeCleared", 1);
             PlayerPrefs.Save();
         } 
-            isStart = false;
+            
+        isStart = false;
+        //BGM 속도 돌려놓기
+        AudioManager.Instance.ResetBGMPirch();
+
         endText.SetActive(true);
         //게임 종료(끝! 텍스트 발생) 후, 1초후 UI 활성화
         Invoke("ActiveGameoverUi", 1);
