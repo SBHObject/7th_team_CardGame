@@ -6,10 +6,11 @@ using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject MainBtn;
     public static GameManager Instance;
     public Text timeText;
     float time = 0.00f;
-
+    
 
     public int cardCount = 0;
 
@@ -71,12 +72,15 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        MainBtn.SetActive(false);
+        Time.timeScale = 1.0f;
         audioSource = GetComponent<AudioSource>();
     }
 
     public void EndGame() {
         endText.SetActive(true);
-
+        Time.timeScale = 0.0f; // 기록 확인을 위한 시간정지
+        MainBtn.SetActive(true);
         //게임 종료(끝! 텍스트 발생) 후, 1초후 UI 활성화
         Invoke("ActiveGameoverUi", 1);
     }
