@@ -659,6 +659,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8178352609812585853, guid: 96ad4129a85ceeb4594a24409162ce12, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178352609812585853, guid: 96ad4129a85ceeb4594a24409162ce12, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178352609812585853, guid: 96ad4129a85ceeb4594a24409162ce12, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -715,7 +727,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81cc91f0fdab0b44a8bd366d7e67b73a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainBtn: {fileID: 0}
   timeText: {fileID: 1624165324}
   cardCount: 0
   endText: {fileID: 261328955}

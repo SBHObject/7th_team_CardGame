@@ -1785,7 +1785,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9108817645410672281}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 825854768720189068}
+        m_TargetAssemblyTypeName: RetryButton, Assembly-CSharp
+        m_MethodName: Retry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8510623819118355585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,7 +1918,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 789885006572950035}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 825854768720189068}
+        m_TargetAssemblyTypeName: RetryButton, Assembly-CSharp
+        m_MethodName: MainMaueBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9132698718060120374
 GameObject:
   m_ObjectHideFlags: 0
