@@ -102,6 +102,10 @@ public class CardManager : MonoBehaviour
                 {
                     Invoke(nameof(EndGame), 1.5f); // 게임끝
                 }
+                else if (GameManager.Instance.cardCount == 2)
+                {
+                    Invoke(nameof(EndGame), 1.5f);
+                }
             }
         }
         // 아래는 동일카드 체크 및 게임종료 로직

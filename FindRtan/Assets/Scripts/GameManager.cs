@@ -6,6 +6,8 @@ using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject notificationPrefab;
+    public Sprite[] cardImages;
     public static GameManager Instance;
     public Text timeText;
     float time = 0.00f;
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
     //게임 시작 여부
     public bool isStart = false;
     private bool hurry = false;
+
 
 
 
@@ -77,10 +80,31 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        if (NotificationManager.Instance == null)
+        {
+            GameObject notificationObject = Instantiate(notificationPrefab);
+            DontDestroyOnLoad(notificationObject); // 씬 전환 시에도 유지
+        }
         Time.timeScale = 1.0f;
         audioSource = GetComponent<AudioSource>();
         //효과음 재생 볼륨 초기화
         audioSource.volume = 0.3f;
+    }
+    public void RandomCard()
+    {
+        int randomIndex = Random.Range(0, cardImages.Length);
+        Sprite selectedCard = cardImages[randomIndex];
+
+        // NotificationManager를 통해 알림 표시
+        if (NotificationManager.Instance != null)
+        {
+            NotificationManager.Instance.ShowNotification(selectedCard);
+        }
+
+        // PlayerPrefs에 카드 수집 상태 저장
+        PlayerPrefs.SetInt("CollectedCard_" + randomIndex, 1);
+        PlayerPrefs.Save();
+        StartManager.cardsUpdated = true;
     }
 
     public void EndGame()
@@ -89,14 +113,16 @@ public class GameManager : MonoBehaviour
 
         if (stageLvl == 1)
         {
+            RandomCard();
             PlayerPrefs.SetInt("NormalModeCleared", 1); // 노말모드 클리어 저장
             PlayerPrefs.Save();// 데이터저장
         }
         else if (stageLvl == 2)
         {
+            RandomCard();
             PlayerPrefs.SetInt("HardModeCleared", 1);
             PlayerPrefs.Save();
-        } 
+        }
             isStart = false;
         endText.SetActive(true);
         //게임 종료(끝! 텍스트 발생) 후, 1초후 UI 활성화
