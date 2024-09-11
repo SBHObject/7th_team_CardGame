@@ -202,6 +202,8 @@ public class CardManager : MonoBehaviour
 
                     //게임 시작
                     GameManager.Instance.isStart = true;
+                    //시작시 SFX 재생
+                    GameManager.Instance.PlayStartSound();
                 }
                 //코루틴 종료 전, 최종적으로 위치를 맞춰줌
                 moveObject.transform.position = targetPosition;
