@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     //게임 시작 여부
     public bool isStart = false;
+    private bool hurry = false;
 
     void Update() 
     {
@@ -48,6 +49,13 @@ public class GameManager : MonoBehaviour
         {
             //30초 이전에만 시간 증가
             time += Time.deltaTime;
+            if(time >= 20f && hurry == false)
+            {
+                //20초가 넘으면, BGM 속도 증가
+                AudioManager.Instance.HurryUpBGM();
+                //한번만 작동
+                hurry = true;
+            }
         }
         timeText.text = time.ToString("N2");
     }
