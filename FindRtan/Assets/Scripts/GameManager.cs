@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     //승리, 패배 사운드
     public AudioClip winSound;
     public AudioClip failSound;
+    //게임 시작시 SFX
+    public AudioClip startSound;
 
     //게임 시작 여부
     public bool isStart = false;
@@ -38,9 +40,11 @@ public class GameManager : MonoBehaviour
     {
         //시작여부가 false이면, 작동하지 않음
         if (isStart == false)
+        {
             return;
+        }
 
-        if (time >= 30.0f) 
+        if (time >= 30.0f && isStart == true) 
         {
             //게임 종료후 인보크를 발생시키기 위해 timeSacle = 0 삭제
             time = 30f;
@@ -75,9 +79,13 @@ public class GameManager : MonoBehaviour
         MainBtn.SetActive(false);
         Time.timeScale = 1.0f;
         audioSource = GetComponent<AudioSource>();
+        //효과음 재생 볼륨 초기화
+        audioSource.volume = 0.3f;
     }
 
-    public void EndGame() {
+    public void EndGame() 
+    {
+        isStart = false;
         endText.SetActive(true);
         Time.timeScale = 0.0f; // 기록 확인을 위한 시간정지
         MainBtn.SetActive(true);
@@ -103,8 +111,16 @@ public class GameManager : MonoBehaviour
             //패배 UI 발생
             failUi.SetActive(true);
             //SFX 재생, 패배
+            //너무 시끄러워서 볼륨 조절...
+            audioSource.volume = 0.2f;
             audioSource.PlayOneShot(failSound);
         }
+    }
+
+    //게임 시작 SFX 재생을 위한 함수
+    public void PlayStartSound()
+    {
+        audioSource.PlayOneShot(startSound);
     }
 
 }

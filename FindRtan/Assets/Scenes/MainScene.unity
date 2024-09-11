@@ -955,8 +955,9 @@ MonoBehaviour:
   winUi: {fileID: 0}
   failUi: {fileID: 0}
   leftTimeText: {fileID: 0}
-  winSound: {fileID: 0}
-  failSound: {fileID: 0}
+  winSound: {fileID: 8300000, guid: e6bd6d6daa247784b96870a14f7e8d4e, type: 3}
+  failSound: {fileID: 8300000, guid: 45484bfd721ed524e97fa4617b9855f5, type: 3}
+  startSound: {fileID: 8300000, guid: e157d8c7fe1c3c64c912271f5c63885f, type: 3}
   isStart: 0
 --- !u!4 &874060682
 Transform:
@@ -985,7 +986,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
