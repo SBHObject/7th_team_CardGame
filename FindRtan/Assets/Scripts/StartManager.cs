@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class StartManager : MonoBehaviour
 {
-    bool nC = false; // 노말클리어 여부 확인 true == 하드모드 해금 
-    bool hC = false; // 하드 클리어 여부 확인 true == 히든모드 해금
 
     public GameObject stagePanel;
     public GameObject HardBtn;
@@ -19,21 +17,12 @@ public class StartManager : MonoBehaviour
 
     void Update()
     {
-        if (nC == true)
-        {
-            HardBtn.SetActive(true);
-            HardBtnOff.SetActive(false);
-            if (hC == true)
-            {
-                HiddenBtn.SetActive(true);
-            }
-            else if (hC == false) { HiddenBtn.SetActive(false); }
-        }
-        else if (nC == false)
-        {
-            HardBtn.SetActive(false);
-            HardBtnOff.SetActive(true);
-        }
+        bool nC = PlayerPrefs.GetInt("NormalModeCleared", 0) == 1;
+        bool hC = PlayerPrefs.GetInt("HardModeCleared", 0) == 1;
+
+        HardBtn.SetActive(nC);
+        HardBtnOff.SetActive(!nC);
+        HiddenBtn.SetActive(hC);
         
     }
 }

@@ -35,8 +35,11 @@ public class GameManager : MonoBehaviour
     public bool isStart = false;
     private bool hurry = false;
 
+
+
     void Update() 
     {
+
         //시작여부가 false이면, 작동하지 않음
         if (isStart == false)
         {
@@ -45,10 +48,9 @@ public class GameManager : MonoBehaviour
 
         if (time >= 30.0f && isStart == true) 
         {
-            //게임 종료후 인보크를 발생시키기 위해 timeSacle = 0 삭제
-            time = 30f;
-            EndGame();
-        }
+                time = 30f;
+                EndGame();
+        } 
         else
         {
             //30초 이전에만 시간 증가
@@ -81,9 +83,21 @@ public class GameManager : MonoBehaviour
         audioSource.volume = 0.3f;
     }
 
-    public void EndGame() 
+    public void EndGame()
     {
-        isStart = false;
+        int stageLvl = StageButton.stageLevel;
+
+        if (stageLvl == 1)
+        {
+            PlayerPrefs.SetInt("NormalModeCleared", 1); // 노말모드 클리어 저장
+            PlayerPrefs.Save();// 데이터저장
+        }
+        else if (stageLvl == 2)
+        {
+            PlayerPrefs.SetInt("HardModeCleared", 1);
+            PlayerPrefs.Save();
+        } 
+            isStart = false;
         endText.SetActive(true);
         //게임 종료(끝! 텍스트 발생) 후, 1초후 UI 활성화
         Invoke("ActiveGameoverUi", 1);

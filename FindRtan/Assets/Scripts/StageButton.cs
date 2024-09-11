@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StageButton : MonoBehaviour
 {
-    public static int stageLevel = 1;
+    public static int stageLevel;
     public void NomalBtn()
     {
         SceneManager.LoadScene("MainScene");// Check ex)NomalScene
@@ -24,8 +24,4 @@ public class StageButton : MonoBehaviour
         stageLevel = 3;
     }
 
-    public void MainBtn()
-    {
-        SceneManager.LoadScene("StartScene");
-    }
 }
