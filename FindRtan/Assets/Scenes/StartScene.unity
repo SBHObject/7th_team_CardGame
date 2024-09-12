@@ -940,6 +940,7 @@ GameObject:
   - component: {fileID: 684601475}
   - component: {fileID: 684601477}
   - component: {fileID: 684601476}
+  - component: {fileID: 684601478}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -999,7 +1000,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD300\uC6D0\uC744 \uB9DE\uCDB0\uB77C!"
+  m_Text: Press the Play
 --- !u!222 &684601477
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1008,6 +1009,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684601474}
   m_CullTransparentMesh: 1
+--- !u!95 &684601478
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684601474}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4f4db3b37e12a264297268fcdab4fb6e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &711012801
 GameObject:
   m_ObjectHideFlags: 0
@@ -2199,7 +2221,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300024, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
