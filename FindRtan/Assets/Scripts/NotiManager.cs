@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,9 +21,15 @@ public class NotificationManager : MonoBehaviour
         }
     }
 
-    public void ShowNotification(Sprite cardImage)
+    public void ShowNotification(Sprite cardImage) // 카드획특판넬
     {
         notificationCardImage.sprite = cardImage;
         notificationPanel.SetActive(true);
+        StartCoroutine(HideNotificationAfterDelay(3f)); //3초딜레이후 함수작동
+    }
+    private IEnumerator HideNotificationAfterDelay(float delay) // 알림끄기
+    {
+        yield return new WaitForSeconds(delay);
+        notificationPanel.SetActive(false);
     }
 }

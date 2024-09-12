@@ -104,7 +104,8 @@ public class GameManager : MonoBehaviour
         // PlayerPrefs에 카드 수집 상태 저장
         PlayerPrefs.SetInt("CollectedCard_" + randomIndex, 1);
         PlayerPrefs.Save();
-        StartManager.cardsUpdated = true;
+
+        StartManager.cardsUpdated = true; // 카드업데이트
     }
 
     public void EndGame()

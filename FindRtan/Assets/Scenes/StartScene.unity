@@ -123,6 +123,68 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &72077904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 72077905}
+  - component: {fileID: 72077906}
+  m_Layer: 0
+  m_Name: Cardpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &72077905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72077904}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 133.39337, y: 1028.332, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &72077906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72077904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f09f10489f0d850419493468c4669891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardImages:
+  - {fileID: 21300000, guid: 402a573f0c3cfb54987a6465c7e5a4eb, type: 3}
+  - {fileID: 21300000, guid: abad018e87c7d364e968e6a818a2d520, type: 3}
+  - {fileID: 21300000, guid: 1ec5c8a4a7a401f4889c1a818514cc11, type: 3}
+  - {fileID: 21300000, guid: 92eb3a99bdcf45a4bbcdf22f322b496f, type: 3}
+  - {fileID: 21300000, guid: da98266e3361b114f94977cc21256dd8, type: 3}
+  - {fileID: 21300000, guid: 239c1d9fe0bf0c14cb712c647f60aa25, type: 3}
+  - {fileID: 21300000, guid: 9f7f0af5c0704e8498a5b2b7fa4510f9, type: 3}
+  - {fileID: 21300000, guid: 0665fd6f1541c654eadc4b62a2c3d4e4, type: 3}
+  cardSlots:
+  - {fileID: 1260404082}
+  - {fileID: 1670240871}
+  - {fileID: 713181533}
+  - {fileID: 1784651743}
+  - {fileID: 577851031}
+  - {fileID: 1346576577}
+  - {fileID: 678235678}
+  - {fileID: 876583736}
 --- !u!1 &125259588
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,28 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2fa4fadf5a3ee45a242e923d2da07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardImages:
-  - {fileID: 21300000, guid: 402a573f0c3cfb54987a6465c7e5a4eb, type: 3}
-  - {fileID: 21300000, guid: abad018e87c7d364e968e6a818a2d520, type: 3}
-  - {fileID: 21300000, guid: 1ec5c8a4a7a401f4889c1a818514cc11, type: 3}
-  - {fileID: 21300000, guid: 92eb3a99bdcf45a4bbcdf22f322b496f, type: 3}
-  - {fileID: 21300000, guid: da98266e3361b114f94977cc21256dd8, type: 3}
-  - {fileID: 21300000, guid: 239c1d9fe0bf0c14cb712c647f60aa25, type: 3}
-  - {fileID: 21300000, guid: 9f7f0af5c0704e8498a5b2b7fa4510f9, type: 3}
-  - {fileID: 21300000, guid: 0665fd6f1541c654eadc4b62a2c3d4e4, type: 3}
-  cardSlots:
-  - {fileID: 1260404082}
-  - {fileID: 1670240871}
-  - {fileID: 713181533}
-  - {fileID: 1784651743}
-  - {fileID: 1346576577}
-  - {fileID: 678235678}
-  - {fileID: 876583736}
-  - {fileID: 577851031}
   stagePanel: {fileID: 2059298167}
-  HardBtn: {fileID: 927197360}
-  HardBtnOff: {fileID: 1203038214}
-  HiddenBtn: {fileID: 1715651592}
 --- !u!4 &125259590
 Transform:
   m_ObjectHideFlags: 0
@@ -490,7 +531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &577851029
 RectTransform:
   m_ObjectHideFlags: 0
@@ -581,7 +622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &678235676
 RectTransform:
   m_ObjectHideFlags: 0
@@ -751,7 +792,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &713181531
 RectTransform:
   m_ObjectHideFlags: 0
@@ -903,6 +944,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 796613765}
   m_CullTransparentMesh: 1
+--- !u!1 &813050025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 813050027}
+  - component: {fileID: 813050026}
+  m_Layer: 0
+  m_Name: StartStage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &813050026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813050025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e8c58794ec85d84e9c1a09a58037f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HardBtn: {fileID: 927197360}
+  HardBtnOff: {fileID: 1203038214}
+  HiddenBtn: {fileID: 1715651592}
+--- !u!4 &813050027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813050025}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 133.39337, y: 1028.332, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &859661171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,7 +1172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &876583734
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1798,7 +1886,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1260404080
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2052,7 +2140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1346576575
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2222,7 +2310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1670240869
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2460,7 +2548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1784651741
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2968,3 +3056,5 @@ SceneRoots:
   - {fileID: 458374740}
   - {fileID: 322907197}
   - {fileID: 125259590}
+  - {fileID: 72077905}
+  - {fileID: 813050027}
