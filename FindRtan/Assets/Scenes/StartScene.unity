@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 215159400}
   - component: {fileID: 215159399}
   - component: {fileID: 215159398}
+  - component: {fileID: 215159402}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -297,7 +298,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 215159402}
         m_TargetAssemblyTypeName: StageButton, Assembly-CSharp
         m_MethodName: ResetPlayerPrefs
         m_Mode: 1
@@ -347,6 +348,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215159396}
   m_CullTransparentMesh: 1
+--- !u!114 &215159402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215159396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225c84a53b2534642b3601007a264be3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stagePanel: {fileID: 0}
 --- !u!1 &322907194
 GameObject:
   m_ObjectHideFlags: 0
