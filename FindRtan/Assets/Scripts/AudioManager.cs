@@ -34,4 +34,10 @@ public class AudioManager : MonoBehaviour
         //BGM 재생속도 증가
         audioSource.pitch = 1.1f;
     }
+
+    //속도 원래대로 돌리기
+    public void ResetBGMPirch()
+    {
+        audioSource.pitch = 1.0f;
+    }
 }

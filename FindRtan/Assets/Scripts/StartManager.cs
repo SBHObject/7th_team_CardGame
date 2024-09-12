@@ -10,6 +10,7 @@ public class StartManager : MonoBehaviour
     public GameObject stagePanel;
     public static bool cardsUpdated = false;
 
+<<<<<<< HEAD
     private void Start()
     {
 
@@ -20,6 +21,13 @@ public class StartManager : MonoBehaviour
         {
             cardsUpdated = false;
         }
+=======
+
+    public void PlayBtn()
+    {
+        ButtonSFXPlayer.Instance.PlayButtonSFX();
+        stagePanel.SetActive(true);
+>>>>>>> Dev
     }
 
     private void Awake()

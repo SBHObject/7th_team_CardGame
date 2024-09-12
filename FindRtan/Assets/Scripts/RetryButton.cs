@@ -9,10 +9,12 @@ public class RetryButton : MonoBehaviour
     public void Retry() {
         //지금 씬을 불러오기
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        ButtonSFXPlayer.Instance.PlayButtonSFX();
     }
 
     public void MainMaueBtn()
     {
         SceneManager.LoadScene("StartScene");
+        ButtonSFXPlayer.Instance.PlayButtonSFX();
     }
 }
