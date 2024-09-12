@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class StageButton : MonoBehaviour
 {
+    public GameObject stagePanel;
     public static int stageLevel;
-
-    public void NomalBtn()
+    public void NormalBtn()
     {
         ButtonSFXPlayer.Instance.PlayButtonSFX();
         SceneManager.LoadScene("MainScene");// Check ex)NomalScene
@@ -27,5 +27,13 @@ public class StageButton : MonoBehaviour
         SceneManager.LoadScene("MainScene");// Check ex)HiddenScene
         stageLevel = 3;
     }
-
+    public void PlayBtn()
+    {
+        stagePanel.SetActive(true);
+    }
+    public void ResetPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+    }
 }
