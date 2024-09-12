@@ -35,5 +35,6 @@ public class StageButton : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
+        SceneManager.LoadScene("StartScene");
     }
 }
