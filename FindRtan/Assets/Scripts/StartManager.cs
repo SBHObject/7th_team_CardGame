@@ -10,8 +10,10 @@ public class StartManager : MonoBehaviour
     public GameObject HardBtnOff;
     public GameObject HiddenBtn;
 
+
     public void PlayBtn()
     {
+        ButtonSFXPlayer.Instance.PlayButtonSFX();
         stagePanel.SetActive(true);
     }
 
