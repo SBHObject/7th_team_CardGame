@@ -90,7 +90,7 @@ public class CardManager : MonoBehaviour
         CardArrangeEffect();
     }
 
-    public void isMatched() {
+    public void IsMatched() {
         Debug.Log("[CardManager.cs] isMatched");
 
         int boom = StageButton.stageLevel; // 스테이지 레벨체크

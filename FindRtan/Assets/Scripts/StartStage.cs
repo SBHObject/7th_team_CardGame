@@ -13,20 +13,23 @@ public class StartStage : MonoBehaviour
     {
         bool nC = PlayerPrefs.GetInt("NormalModeCleared", 0) == 1;
         bool hC = PlayerPrefs.GetInt("HardModeCleared", 0) == 1;
+
         if (nC)
         {
             HardBtn.SetActive(true);
             HardBtnOff.SetActive(false);
         }
-        else if (hC)
-        {
-            HiddenBtn.SetActive(true);
-        }
-        else if (!nC)
+        else
         {
             HardBtn.SetActive(false);
             HardBtnOff.SetActive(true);
         }
+
+        if (hC && nC)
+        {
+            HiddenBtn.SetActive(true);
+        }
+        
     }
 
     // Update is called once per frame

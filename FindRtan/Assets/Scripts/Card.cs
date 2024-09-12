@@ -73,7 +73,7 @@ public class Card : MonoBehaviour
             }
             else {
                 CardManager.Instance.secondCard = this;
-                CardManager.Instance.isMatched();
+                CardManager.Instance.IsMatched();
             }
         }
     }

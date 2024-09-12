@@ -45,6 +45,13 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        //강제승리 트리거
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            cardCount = 0;
+            EndGame();
+        }
+
         if (time >= 30.0f && isStart == true) 
         {
                 time = 30f;
@@ -102,22 +109,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void EndGame()
-    {
-        int stageLvl = StageButton.stageLevel;
-
-        if (stageLvl == 1)
-        {
-            RandomCard();
-            PlayerPrefs.SetInt("NormalModeCleared", 1); // 노말모드 클리어 저장
-            PlayerPrefs.Save();// 데이터저장
-        }
-        else if (stageLvl == 2)
-        {
-            RandomCard();
-            PlayerPrefs.SetInt("HardModeCleared", 1);
-            PlayerPrefs.Save();
-        } 
-            
+    {  
         isStart = false;
         //BGM 속도 돌려놓기
         AudioManager.Instance.ResetBGMPirch();
@@ -133,6 +125,23 @@ public class GameManager : MonoBehaviour
         //cardCount 변수가 0일때 승리, 아니면 패배
         if(cardCount == 0)
         {
+
+            int stageLvl = StageButton.stageLevel;
+
+            if (stageLvl == 1)
+            {
+                RandomCard();
+                PlayerPrefs.SetInt("NormalModeCleared", 1); // 노말모드 클리어 저장
+                PlayerPrefs.Save();// 데이터저장
+            }
+            else if (stageLvl == 2)
+            {
+                RandomCard();
+                PlayerPrefs.SetInt("HardModeCleared", 1);
+                PlayerPrefs.Save();
+            }
+
+
             //승리시 남은시간 표기
             leftTimeText.text = time.ToString("N2");
             //승리 UI 발생
