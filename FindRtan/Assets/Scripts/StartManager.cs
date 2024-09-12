@@ -10,9 +10,11 @@ public class StartManager : MonoBehaviour
     public GameObject stagePanel;
     public static bool cardsUpdated = false;
 
-    private void Start()
-    {
 
+    public void PlayBtn()
+    {
+        ButtonSFXPlayer.Instance.PlayButtonSFX();
+        stagePanel.SetActive(true);
     }
     private void Update()
     {
