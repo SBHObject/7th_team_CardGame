@@ -197,6 +197,7 @@ public class CardManager : MonoBehaviour
                 //진짜 카드 활성화
                 realCards[lastCard].gameObject.SetActive(true);
                 break;
+
             }
             //가짜 카드들 이동
             moveObject.transform.position = Vector3.Lerp(moveObject.transform.position, targetPosition, moveSpeed * Time.deltaTime);

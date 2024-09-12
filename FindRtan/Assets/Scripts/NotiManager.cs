@@ -23,7 +23,8 @@ public class NotificationManager : MonoBehaviour
 
     public void ShowNotification(Sprite cardImage) // 카드획득 알림
     {
-        notificationCardImage.sprite = cardImage; // 이전에 RandomCard()함수에서 받아온 Sprite가 notificationCardImage.sprite에 들어감
+        // 이전에 RandomCard()함수에서 받아온 Sprite가 notificationCardImage.sprite에 들어감
+        notificationCardImage.sprite = cardImage; 
         notificationPanel.SetActive(true); // 미리 만들어둔 판넬을 켜주고 
         StartCoroutine(HideNotificationAfterDelay(3f)); // 여기부터 아래까지는 코루틴을 이용한 3초 딜레이주기
     }
