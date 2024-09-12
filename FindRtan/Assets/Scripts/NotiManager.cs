@@ -21,15 +21,15 @@ public class NotificationManager : MonoBehaviour
         }
     }
 
-    public void ShowNotification(Sprite cardImage) // 카드획특판넬
+    public void ShowNotification(Sprite cardImage) // 카드획득 알림
     {
-        notificationCardImage.sprite = cardImage;
-        notificationPanel.SetActive(true);
-        StartCoroutine(HideNotificationAfterDelay(3f)); //3초딜레이후 함수작동
+        notificationCardImage.sprite = cardImage; // 이전에 RandomCard()함수에서 받아온 Sprite가 notificationCardImage.sprite에 들어감
+        notificationPanel.SetActive(true); // 미리 만들어둔 판넬을 켜주고 
+        StartCoroutine(HideNotificationAfterDelay(3f)); // 여기부터 아래까지는 코루틴을 이용한 3초 딜레이주기
     }
-    private IEnumerator HideNotificationAfterDelay(float delay) // 알림끄기
+    private IEnumerator HideNotificationAfterDelay(float delay) 
     {
-        yield return new WaitForSeconds(delay);
-        notificationPanel.SetActive(false);
+        yield return new WaitForSeconds(delay); // 위에서 작성한 3초만큼 기다렸다가 다음코드 진행
+        notificationPanel.SetActive(false); // 판넬끄기
     }
 }

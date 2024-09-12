@@ -86,22 +86,19 @@ public class GameManager : MonoBehaviour
         //효과음 재생 볼륨 초기화
         audioSource.volume = 0.3f;
     }
-    public void RandomCard()
+    public void RandomCard()// 랜덤카드선택 및 획득카드알림, 수집상태 저장
     {
-        int randomIndex = Random.Range(0, cardImages.Length);
-        Sprite selectedCard = cardImages[randomIndex];
+        int randomIndex = Random.Range(0, cardImages.Length); //0에서 배열의 크기 사이의 숫자를 랜덤으로 하나 선택
+        Sprite selectedCard = cardImages[randomIndex]; // 선택한 숫자를 넣어 그 카드의 sprite를 저장
 
         // NotificationManager를 통해 알림 표시
         if (NotificationManager.Instance != null)
         {
-            NotificationManager.Instance.ShowNotification(selectedCard);
+            NotificationManager.Instance.ShowNotification(selectedCard); // 위에서 저장한 sprite를 알림판넬에 전달
         }
 
-        // PlayerPrefs에 카드 수집 상태 저장
-        PlayerPrefs.SetInt("CollectedCard_" + randomIndex, 1);
+        PlayerPrefs.SetInt("CollectedCard_" + randomIndex, 1); // PlayerPrefs 를 이용해서 해당카드번호를 저장
         PlayerPrefs.Save();
-
-        StartManager.cardsUpdated = true; // 카드업데이트
     }
 
     public void EndGame()

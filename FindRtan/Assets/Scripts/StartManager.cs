@@ -18,10 +18,6 @@ public class StartManager : MonoBehaviour
     }
     private void Update()
     {
-        if (cardsUpdated)
-        {
-            cardsUpdated = false;
-        }
     }
 
     private void Awake()
