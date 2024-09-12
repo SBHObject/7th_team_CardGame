@@ -143,6 +143,7 @@ public class CardManager : MonoBehaviour
     {
         //카드배치의 세로줄 수, 나머지가 있으면 +1 추가
         int lineNum = (cardNum % 4 == 0) ? cardNum / 4 : cardNum / 4 + 1;
+        int lastLine = (cardNum % 4 == 0) ? 4 : cardNum % 4;
         //가짜 카드 배열 생성
         GameObject[] fakeCardDeck = new GameObject[cardNum];
         //위치에 필요한만큼 가짜카드 생성
@@ -152,19 +153,25 @@ public class CardManager : MonoBehaviour
             //가짜카드을의 버튼기능 비활성화
             fakeCardDeck[i].GetComponentInChildren<Button>().enabled = false;
         }
-
+        //마지막 카드 가중치
+        int lastCardAdded = 0;
         //세로줄로 카드 이동
         for (int j = 0; j < lineNum; j++)
         {
             //가로줄로 카드 이동
             for (int k = 0; k < 4; k++)
             {
+                if(j == lineNum -1 && k >= lastLine)
+                {
+                    lastCardAdded++;
+                    continue;
+                }
                 //홀수일때, 중앙값이 -1인 알고리즘 필요 짝수일때, 중앙의 양쪽값이 -0.3, -0.7
                 float middleNum = lineNum % 2 == 0 ? lineNum / 2f - 0.5f : lineNum / 2;
                 //카드 목표지점
                 Vector3 targetPosition = new Vector3(-2.1f + (1.4f * k), -1 + (middleNum - j) * 1.4f, 0);
                 //카드 이동 코루틴
-                StartCoroutine(CardMove(fakeCardDeck[j * 4 + k], targetPosition, fakeCardDeck, j * 4 + k));
+                StartCoroutine(CardMove(fakeCardDeck[j * 4 + k], targetPosition, fakeCardDeck, j * 4 + k - lastCardAdded));
             }
         }
     }
@@ -180,13 +187,6 @@ public class CardManager : MonoBehaviour
                 //마지막 카드의 이동이 끝나면 작동
                 if(lastCard == cardNum - 1)
                 {
-                    //가짜 카드들을 진짜 카드로 교체
-                    for (int n = 0; n < cardNum; n++)
-                    {
-                        realCards[n].gameObject.SetActive(true);
-                        Destroy(fakeCards[n].gameObject);
-                    }
-
                     //게임 시작
                     GameManager.Instance.isStart = true;
                     //시작시 SFX 재생
@@ -194,6 +194,8 @@ public class CardManager : MonoBehaviour
                 }
                 //코루틴 종료 전, 최종적으로 위치를 맞춰줌
                 moveObject.transform.position = targetPosition;
+                //진짜 카드 활성화
+                realCards[lastCard].gameObject.SetActive(true);
                 break;
             }
             //가짜 카드들 이동
@@ -201,5 +203,7 @@ public class CardManager : MonoBehaviour
             //강제 업데이트 구현...
             yield return new WaitForSeconds(Time.deltaTime);
         }
+        
+        Destroy(moveObject.gameObject);
     }
 }
