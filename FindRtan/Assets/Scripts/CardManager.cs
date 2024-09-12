@@ -163,26 +163,10 @@ public class CardManager : MonoBehaviour
                 float middleNum = lineNum % 2 == 0 ? lineNum / 2f - 0.5f : lineNum / 2;
                 //카드 목표지점
                 Vector3 targetPosition = new Vector3(-2.1f + (1.4f * k), -1 + (middleNum - j) * 1.4f, 0);
-                //목표지점까지 카드 이동
-                //fakeCardDeck[j * 4 + k].transform.position = Vector3.Lerp(fakeCardDeck[j * 4 + k].transform.position, targetPosition, Time.deltaTime * moveSpeed);
                 //카드 이동 코루틴
                 StartCoroutine(CardMove(fakeCardDeck[j * 4 + k], targetPosition, fakeCardDeck, j * 4 + k));
             }
         }
-        /*
-        //해당 내용은 이후 삭제 예정, 과정 저장용으로 일단 남겨둔 주석입니다.
-        //게임에 사용되는 진짜 카드들
-        Card[] realCards = GetComponentsInChildren<Card>();
-        //가짜 카드들을 진짜 카드로 교체
-        for(int n = 0; n < cardNum; n++)
-        {
-            realCards[n].gameObject.SetActive(true);
-            fakeCardDeck[n].gameObject.SetActive(false);
-        }
-        
-        //게임 시작
-        GameManager.Instance.isStart = true;
-        */
     }
 
     private IEnumerator CardMove(GameObject moveObject, Vector3 targetPosition, GameObject[] fakeCards, int lastCard)
